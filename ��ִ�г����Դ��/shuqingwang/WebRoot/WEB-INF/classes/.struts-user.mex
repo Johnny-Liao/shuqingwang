@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="dang-user" location="0,0" size="0,0">
+    <action name="register" location="0,0" size="0,0">
+      <result name="verify">
+        <resourceEdge source="verify" routing="0" target="verify_form.jsp" />
+      </result>
+    </action>
+    <action name="checkEmail" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="verifyCode" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="checkCode" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="validateCode" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="checkCode" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="verify_form.jsp" path="/user/verify_form.jsp" location="0,0" size="0,0" />
+  <webResource name="main.jsp" path="../main/main.jsp" location="0,0" size="0,0" />
+  <webResource name="login_form.jsp" path="/user/login_form.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

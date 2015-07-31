@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	
+	<!-- 购物车模块的Action定义 -->
+	<package name="dang-cart" namespace="/cart" extends="dang-default">
+	
+		<!-- 购买商品 -->
+		<action name="buy" class="org.lsh.qing.action.cart.AddCartAction">
+			<result type="json"></result>		<!-- json格式返回，以便Ajax处理 -->
+		</action>
+		
+		<!-- 列出购买商品- -->
+		<action name="cart_list" class="org.lsh.qing.action.cart.ListCartAction">
+			<result>/cart/cart_list.jsp</result>
+		</action>
+		
+		<!-- 删除商品 -->
+		<action name="cart_delete" class="org.lsh.qing.action.cart.DeleteProductAction">
+			<result name="success"  type="chain">cart_list</result>
+		</action>
+		
+		<!-- 恢复商品 -->
+		<action name="recovery" class="org.lsh.qing.action.cart.RecoveryProductAction">
+			<result name="success" type="chain">cart_list</result>
+		</action>
+		
+		
+		<!-- 修改商品 -->
+		<action name="modify" class="org.lsh.qing.action.cart.ModfiyQtyAction">
+			<result name="success" type="chain">cart_list</result>
+		</action>
+		
+	</package>
+
+</struts>	

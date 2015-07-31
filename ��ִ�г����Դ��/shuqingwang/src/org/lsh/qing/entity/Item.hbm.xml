@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.lsh.qing.entity.Item" table="d_item">
+		<id name="id" column="id" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="order" class="org.lsh.qing.entity.Order" column="order_id"></many-to-one>
+		<many-to-one name="product" class="org.lsh.qing.entity.Product" column="product_id"></many-to-one>
+		<property name="productName" column="product_name" 
+			type="string">
+		</property>
+		<property name="dangPrice" column="dang_price" 
+			type="double">
+		</property>
+		<property name="productNum" column="product_num" 
+			type="integer">
+		</property>
+		<property name="amount" column="amount" 
+			type="double">
+		</property>
+	</class>
+</hibernate-mapping>

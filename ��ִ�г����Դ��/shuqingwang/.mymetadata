@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="dangdang-ssh"
+  id="myeclipse.1362573738271"
+  context-root="/dangdang-ssh"
+  j2ee-spec="5.0"
+  archive="dangdang-ssh.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

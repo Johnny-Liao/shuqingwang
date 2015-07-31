@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="dang-main" namespace="/main" extends="dang-default">
+	
+		<!-- 产品浏览模块的Action定义 -->
+		<!--退出用户 -->
+		<action name="exit" class="org.lsh.qing.action.user.ExitAction">
+			<result name="success">/main/main.jsp</result><!-- type="redirectAction" -->
+		</action>
+		<action name="category" class="org.lsh.qing.action.main.CategoryAction">
+			<result>/main/category.jsp</result>
+		</action>
+		<action name="findNewBook" class="org.lsh.qing.action.main.FindNewBookAction">
+			<param name="size">8</param>
+			<result>/main/new.jsp</result>
+		</action>
+		<action name="recommendBook"
+			class="org.lsh.qing.action.main.FindRecommendBookAction">
+			<result>/main/recommend.jsp</result>
+		</action>
+		<!-- 热销图书 -->
+		<action name="findHotBook" class="org.lsh.qing.action.main.FindHotBookAction">
+			<param name="size">4</param>
+			<result name="success">/main/hot.jsp</result>
+		</action>
+		<!-- 图书列表 -->
+		<action name="booklist" class="org.lsh.qing.action.main.BookListAction">
+			<result>/main/book_list.jsp</result>
+		</action>
+
+	</package>
+</struts>

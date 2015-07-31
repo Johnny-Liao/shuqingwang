@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="dang-user" namespace="/user" extends="dang-default">
+		<!--自定义user模块 -->
+		<!-- 注册 -->
+		<action name="register" class="org.lsh.qing.action.user.RegisterAction">
+			<result name="verify">/user/verify_form.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 注册成功 -->
+	<!-- 	<action name="registerOk" class="org.lsh.qing.action.user.RegisterOKAction">
+			<result name="verify">/user/register_ok.jsp</result>
+		</action>
+ -->
+		
+		<!-- 检查邮箱唯一性 -->
+		<action name="checkEmail" class="org.lsh.qing.action.user.CheckEmailAction">
+			<result type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 生成验证码 -->
+		<action name="verifyCode" class="org.lsh.qing.action.user.VerifyCodeAction">
+			<result type="stream">
+				<param name="inputName">input</param>
+				<param name="contentType">image/jpeg</param>
+			</result>
+		</action>
+		<!-- 校验验证码 -->
+		<action name="checkCode"
+			class="org.lsh.qing.action.user.CheckVerifyCodeAction">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 校验邮箱验证码 -->
+		<action name="validateCode" class="org.lsh.qing.action.user.CheckEmailCodeAction">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 登录验证 -->
+		<action name="checkUser" class="org.lsh.qing.action.user.LoginAction">
+			<result name="success" type="redirect">../main/main.jsp</result>
+			<result name="error">/user/login_form.jsp</result>
+			<result name="order" type="redirect">../cart/cart_list.jsp</result>
+			<result name="is_email">/user/verify_form.jsp</result>
+		</action>
+	</package>
+</struts>

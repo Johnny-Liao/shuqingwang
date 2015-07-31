@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="dang-main" location="10,10" size="525,1050">
+    <action name="exit" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="category" location="310,862" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="category.jsp" />
+      </result>
+    </action>
+    <action name="findNewBook" location="310,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="new.jsp" />
+      </result>
+    </action>
+    <action name="recommendBook" location="310,512" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="recommend.jsp" />
+      </result>
+    </action>
+    <action name="booklist" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="book_list.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="new.jsp" path="/main/new.jsp" location="582,135" size="150,55" />
+  <webResource name="hot.jsp" path="/main/hot.jsp" location="585,310" size="150,55" />
+  <webResource name="recommend.jsp" path="/main/recommend.jsp" location="591,485" size="150,55" />
+  <webResource name="hotTop.jsp" path="/main/hotTop.jsp" location="574,660" size="150,55" />
+  <webResource name="category.jsp" path="/main/category.jsp" location="603,835" size="150,55" />
+  <webResource name="book_list.jsp" path="/main/book_list.jsp" location="323,1115" size="150,55" />
+</Struts2Diagram>
+

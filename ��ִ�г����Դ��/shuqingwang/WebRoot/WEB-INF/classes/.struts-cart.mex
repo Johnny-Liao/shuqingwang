@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="dang-cart" location="10,10" size="770,245">
+    <action name="buy" location="65,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="cart_list" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="cart_list.jsp" />
+      </result>
+    </action>
+    <action name="cart_delete" location="555,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="recovery" location="555,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="modfiy" location="310,57" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="cart_list.jsp" path="/cart/cart_list.jsp" location="84,310" size="150,55" />
+</Struts2Diagram>
+

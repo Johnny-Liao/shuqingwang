@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.lsh.qing.entity.Category" table="d_category"> <!-- catalog="shuqing" -->
+		<id name="id" type="integer">
+			<column name="id" />
+			<generator class="identity"></generator>
+		</id>
+		<property name="turn" type="integer">
+			<column name="turn" not-null="true" />
+		</property>
+		<property name="enName" type="string">
+			<column name="en_name" length="200" not-null="true" />
+		</property>
+		<property name="name" type="string">
+			<column name="name" length="200" not-null="true" />
+		</property>
+		<property name="description" type="string">
+			<column name="description" length="200" />
+		</property>
+		<property name="parentId" type="integer">
+			<column name="parent_id" />
+		</property>
+		<!-- pros属性映射，用多对多关系加载 -->
+		<list name="books" table="d_category_product">
+			<!-- 外键字段跟当前主键字段自动关联 -->
+			<key column="cat_id"></key>
+			<list-index column="id" base="1"></list-index>
+			<many-to-many class="org.lsh.qing.entity.Book" column="product_id">
+			</many-to-many>
+		</list>
+		<!-- list集合 -->
+		<list name="listCates">
+			<key column="parent_id"></key>
+			<list-index column="turn" base="1"></list-index>
+			<one-to-many class="org.lsh.qing.entity.Category" />
+		</list>
+		<!--子查询映射 -->
+		<property name="pnum" type="integer"
+			formula="(select count(*) from d_category_product dcp where dcp.cat_id=id)">
+		</property>
+	</class>
+</hibernate-mapping>
